@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - register:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: register
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: register_db
+volumes:
+  register:
