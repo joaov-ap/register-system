@@ -9,16 +9,14 @@ import java.util.List;
 @Table(name = "tb_persons")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@ToString
-@EqualsAndHashCode
+@Data
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long person_id;
     @Column(nullable = false)
     private String name;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
     @Column(nullable = false)
     private int age;
